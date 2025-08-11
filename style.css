@@ -197,7 +197,7 @@ body {
 }
 
 .item-container {
-    background-color: #999999;
+    background-color: #c0c0c0;
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 15px;
@@ -247,7 +247,7 @@ body {
 
 .tea-section .item-container,
 .ice-cream-section .item-container {
-    background-color: #e0e0e0;
+    background-color: #c0c0c0;
 }
 
 .tea-section .menu-title,
@@ -268,7 +268,7 @@ body {
 .bakery-section .item-container,
 .desserts-section .item-container,
 .gingerbread-section .item-container {
-    background-color: #e0e0e0;
+    background-color: #c0c0c0;
 }
 
 .drinks-section .menu-title,
@@ -444,17 +444,37 @@ body {
         height: calc(40px + 1vw);
     }
     
+    .coffee-section {
+        padding: 0px 0px 20px 0px;
+    }
+    
     .coffee-card {
         max-width: 100%;
     }
     
     .card-content {
-        padding: calc(30px + 1vw) calc(30px + 1vw);
+        padding: calc(20px + 1vw) calc(15px + 1vw);
+    }
+    
+    .coffee-text {
+        position: absolute;
+        top: 40px;
+        left: 10px;
+        right: 50px;
+        max-width: none;
+    }
+    
+    .place-text {
+        position: absolute;
+        bottom: 40px;
+        left: 50px;
+        right: 10px;
+        max-width: none;
     }
     
     .coffee-text h2,
     .place-text p {
-        font-size: calc(16px + 0.3vw);
+        font-size: calc(18px + 0.4vw);
     }
     
     .menu-title {
@@ -554,7 +574,7 @@ body {
     
     .coffee-text h2,
     .place-text p {
-        font-size: calc(16px + 0.3vw);
+        font-size: calc(14px + 0.2vw);
     }
     
     .menu-title {
@@ -655,7 +675,7 @@ body {
     
     .coffee-text h2,
     .place-text p {
-        font-size: calc(14px + 0.5vw);
+        font-size: calc(12px + 0.3vw);
     }
     
     .menu-section {

@@ -8,7 +8,6 @@ function initCarouselWithDrag(carouselSelector) {
 
     if (numOriginal === 0) return;
 
-    // Удаляем существующие дубликаты, если они есть
     const allItems = Array.from(track.querySelectorAll('.menu-item'));
     if (allItems.length > numOriginal) {
         for (let i = numOriginal; i < allItems.length; i++) {
@@ -16,7 +15,6 @@ function initCarouselWithDrag(carouselSelector) {
         }
     }
 
-    // Duplicate the items twice for buffering
     for (let i = 0; i < 2; i++) {
         originalItems.forEach(item => {
             const clone = item.cloneNode(true);
@@ -28,16 +26,14 @@ function initCarouselWithDrag(carouselSelector) {
     const initialIndex = numOriginal;
     let currentIndex = initialIndex;
 
-    // Получаем реальную ширину элемента с учетом gap
     const firstItem = allItemsAfterClone[0];
     const itemWidth = firstItem.offsetWidth;
     const computedStyle = window.getComputedStyle(track);
     const gap = parseInt(computedStyle.gap) || 30;
 
-    // Set initial position
     track.style.transform = `translateX(${-(itemWidth + gap) * currentIndex}px)`;
 
-    let isDragging = false;
+    let isDragging = false;     
     let startPos = 0;
     let currentTranslate = -(itemWidth + gap) * currentIndex;
     let prevTranslate = currentTranslate;
@@ -61,7 +57,6 @@ function initCarouselWithDrag(carouselSelector) {
         animationID = requestAnimationFrame(animation);
         track.style.transition = 'none';
         
-        // Stop auto-scroll when user starts dragging
         if (window.autoScrollInterval) {
             clearInterval(window.autoScrollInterval);
             window.autoScrollInterval = null;
@@ -83,7 +78,6 @@ function initCarouselWithDrag(carouselSelector) {
         isDragging = false;
         const movedBy = currentTranslate - prevTranslate;
 
-        // Snap to nearest item
         if (movedBy < -(itemWidth + gap) / 3 && currentIndex < initialIndex + numOriginal) {
             currentIndex += 1;
         }
@@ -95,7 +89,6 @@ function initCarouselWithDrag(carouselSelector) {
         setPositionByIndex();
         track.style.transition = 'transform 0.3s ease';
 
-        // Handle infinite loop
         setTimeout(() => {
             if (currentIndex === 0 || currentIndex === initialIndex + numOriginal) {
                 track.style.transition = 'none';
@@ -104,7 +97,6 @@ function initCarouselWithDrag(carouselSelector) {
             }
         }, 300);
 
-        // Resume auto-scroll after a delay
         setTimeout(() => {
             if (!window.autoScrollInterval) {
                 startAutoScroll();
@@ -127,7 +119,6 @@ function initCarouselWithDrag(carouselSelector) {
                 setPositionByIndex();
                 track.style.transition = 'transform 0.5s ease-in-out';
 
-                // Handle infinite loop
                 if (currentIndex >= initialIndex + numOriginal) {
                     setTimeout(() => {
                         track.style.transition = 'none';
@@ -139,23 +130,18 @@ function initCarouselWithDrag(carouselSelector) {
         }, 3000);
     }
 
-    // Event listeners
     carousel.addEventListener('mousedown', touchStart);
     document.addEventListener('mousemove', touchMove);
     document.addEventListener('mouseup', touchEnd);
 
-    // For touch devices
     carousel.addEventListener('touchstart', touchStart, { passive: false });
     carousel.addEventListener('touchmove', touchMove, { passive: false });
     carousel.addEventListener('touchend', touchEnd);
 
-    // Start auto-scroll
     startAutoScroll();
 }
 
-// Initialize all carousels when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize each carousel section
     initCarouselWithDrag('.menu-section .carousel-container'); // Кофе
     initCarouselWithDrag('.tea-section .carousel-container');
     initCarouselWithDrag('.ice-cream-section .carousel-container');

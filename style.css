@@ -1,0 +1,745 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('./fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.main-container {
+    max-width: 850px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* Верхний блок с фоном */
+.top-section {
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-bottom: 0;
+}
+
+.top-section .main-container {
+    background-color: rgba(232, 232, 232, 0.95);
+}
+
+/* Нижний блок с белым фоном */
+.bottom-section {
+    background-color: white;
+    margin-top: 0;
+}
+
+.header-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 0 0;
+    gap: 10px;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #333333;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.decorative-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.decorative-image.left {
+    margin-right: 5px;
+}
+
+.decorative-image.right {
+    margin-left: 5px;
+}
+
+/* Coffee Section */
+.coffee-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 0px 40px 20px 40px;
+    margin-top: -10px;
+}
+
+.coffee-card {
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('img/banner.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 100%;
+    min-height: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-content {
+    position: relative;
+    height: 100%;
+    min-height: 300px;
+    padding: 40px 50px;
+}
+
+.coffee-text {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    max-width: 400px;
+}
+
+.coffee-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    text-align: left;
+}
+
+.place-text {
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    max-width: 400px;
+}
+
+.place-text p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0;
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    text-align: left;
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 40px 40px 60px 40px;
+    text-align: center;
+}
+
+.menu-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #333333;
+    margin: 0 0 10px 0;
+}
+
+.menu-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #333333;
+    margin: 0 0 40px 0;
+}
+
+.menu-card {
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+
+.carousel-container {
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 30px;
+    transform: translateX(0);
+}
+
+.menu-item {
+    text-align: center;
+    min-width: 180px;
+    flex-shrink: 0;
+}
+
+.item-container {
+    background-color: #999999;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.menu-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 0 auto 15px auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: #333333;
+    margin: 0;
+    text-align: center;
+}
+
+/* Placeholder for images */
+.placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* Tea and Ice Cream Sections */
+.tea-section,
+.ice-cream-section {
+    margin: 20px 0;
+    padding: 40px 40px 60px 40px;
+}
+
+.tea-section .item-container,
+.ice-cream-section .item-container {
+    background-color: #e0e0e0;
+}
+
+.tea-section .menu-title,
+.ice-cream-section .menu-title {
+    color: #8B4513;
+}
+
+/* Additional Menu Sections */
+.drinks-section,
+.bakery-section,
+.desserts-section,
+.gingerbread-section {
+    margin: 20px 0;
+    padding: 40px 40px 60px 40px;
+}
+
+.drinks-section .item-container,
+.bakery-section .item-container,
+.desserts-section .item-container,
+.gingerbread-section .item-container {
+    background-color: #e0e0e0;
+}
+
+.drinks-section .menu-title,
+.bakery-section .menu-title,
+.desserts-section .menu-title,
+.gingerbread-section .menu-title {
+    color: #8B4513;
+}
+
+/* Map Section */
+.map-section {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: white;
+}
+
+.map-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #333333;
+    margin: 0 0 10px 0;
+}
+
+.map-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    margin: 0 0 40px 0;
+    opacity: 0.8;
+}
+
+.map-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Route Section */
+.route-section {
+    padding: 60px 40px;
+    text-align: center;
+    background-color: white;
+}
+
+.route-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #8B4513;
+    margin: 0 0 40px 0;
+}
+
+.qr-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.qr-item {
+    text-align: center;
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.qr-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #8B4513;
+    margin: 0;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 15px 0 0 0;
+    text-align: center;
+    background-color: #f8f6f0;
+    width: 100%;
+}
+
+.contact-block {
+    background-color: #f8f6f0;
+    padding: 40px;
+    width: 100%;
+    margin: 0;
+}
+
+.contact-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #333333;
+    margin: 0;
+}
+
+.contact-phone {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #333333;
+    margin: 0 0 10px 0;
+}
+
+.contact-call-info {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333333;
+    margin: 0 0 20px 0;
+}
+
+.contact-address {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .top-section {
+        background-image: none;
+        background-color: rgba(232, 232, 232, 0.95);
+    }
+    
+    .top-section .main-container {
+        background-color: transparent;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .main-container {
+        max-width: calc(95vw - 40px);
+    }
+    
+    .title {
+        font-size: calc(36px + 1vw);
+    }
+    
+    .decorative-image {
+        width: calc(40px + 1vw);
+        height: calc(40px + 1vw);
+    }
+    
+    .coffee-card {
+        max-width: 100%;
+    }
+    
+    .card-content {
+        padding: calc(30px + 1vw) calc(30px + 1vw);
+    }
+    
+    .coffee-text h2,
+    .place-text p {
+        font-size: calc(16px + 0.3vw);
+    }
+    
+    .menu-title {
+        font-size: calc(28px + 1vw);
+    }
+    
+    .menu-subtitle {
+        font-size: calc(20px + 0.5vw);
+    }
+    
+    .carousel-container {
+        max-width: 100%;
+    }
+    
+    .menu-item {
+        min-width: calc(33.333% - 20px);
+    }
+    
+    .item-container {
+        padding: calc(15px + 0.5vw);
+    }
+    
+    .menu-image {
+        width: calc(120px + 2vw);
+        height: calc(120px + 2vw);
+    }
+    
+    .item-name {
+        font-size: calc(16px + 0.3vw);
+    }
+    
+    .map-section,
+    .route-section {
+        padding: calc(40px + 1vw) calc(20px + 1vw);
+    }
+    
+    .map-title,
+    .route-title {
+        font-size: calc(28px + 1vw);
+    }
+    
+    .map-subtitle {
+        font-size: calc(18px + 0.3vw);
+    }
+    
+    .qr-container {
+        gap: calc(30px + 1vw);
+    }
+    
+    .qr-code {
+        width: calc(120px + 2vw);
+        height: calc(120px + 2vw);
+    }
+    
+    .qr-label {
+        font-size: calc(16px + 0.3vw);
+    }
+    
+    .contact-title {
+        font-size: calc(28px + 1vw);
+    }
+    
+    .contact-phone {
+        font-size: calc(20px + 0.5vw);
+    }
+    
+    .contact-call-info {
+        font-size: calc(14px + 0.2vw);
+    }
+    
+    .contact-address {
+        font-size: calc(18px + 0.3vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        max-width: calc(95vw - 40px);
+    }
+    
+    .title {
+        font-size: calc(36px + 1vw);
+    }
+    
+    .decorative-image {
+        width: calc(40px + 1vw);
+        height: calc(40px + 1vw);
+    }
+    
+    .coffee-card {
+        max-width: 100%;
+    }
+    
+    .card-content {
+        padding: calc(30px + 1vw) calc(30px + 1vw);
+    }
+    
+    .coffee-text h2,
+    .place-text p {
+        font-size: calc(16px + 0.3vw);
+    }
+    
+    .menu-title {
+        font-size: calc(28px + 1vw);
+    }
+    
+    .menu-subtitle {
+        font-size: calc(20px + 0.5vw);
+    }
+    
+    .carousel-container {
+        max-width: 100%;
+    }
+    
+    .menu-item {
+        min-width: calc(33.333% - 20px);
+    }
+    
+    .item-container {
+        padding: calc(15px + 0.5vw);
+    }
+    
+    .menu-image {
+        width: calc(120px + 2vw);
+        height: calc(120px + 2vw);
+    }
+    
+    .item-name {
+        font-size: calc(16px + 0.3vw);
+    }
+    
+    .map-section,
+    .route-section {
+        padding: calc(40px + 1vw) calc(20px + 1vw);
+    }
+    
+    .map-title,
+    .route-title {
+        font-size: calc(28px + 1vw);
+    }
+    
+    .map-subtitle {
+        font-size: calc(18px + 0.3vw);
+    }
+    
+    .qr-container {
+        gap: calc(30px + 1vw);
+    }
+    
+    .qr-code {
+        width: calc(120px + 2vw);
+        height: calc(120px + 2vw);
+    }
+    
+    .qr-label {
+        font-size: calc(16px + 0.3vw);
+    }
+    
+    .contact-title {
+        font-size: calc(28px + 1vw);
+    }
+    
+    .contact-phone {
+        font-size: calc(20px + 0.5vw);
+    }
+    
+    .contact-call-info {
+        font-size: calc(14px + 0.2vw);
+    }
+    
+    .contact-address {
+        font-size: calc(18px + 0.3vw);
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        max-width: calc(100vw - 20px);
+        padding: 0 calc(10px + 0.5vw);
+    }
+    
+    .title {
+        font-size: calc(32px + 1.5vw);
+    }
+    
+    .decorative-image {
+        width: calc(35px + 1.5vw);
+        height: calc(35px + 1.5vw);
+    }
+    
+    .coffee-section {
+        padding: 0px calc(10px + 0.5vw) calc(20px + 1vw) calc(10px + 0.5vw);
+    }
+    
+    .card-content {
+        padding: calc(25px + 1vw) calc(20px + 1vw);
+    }
+    
+    .coffee-text h2,
+    .place-text p {
+        font-size: calc(14px + 0.5vw);
+    }
+    
+    .menu-section {
+        padding: calc(30px + 1vw) calc(10px + 0.5vw) calc(40px + 1vw) calc(10px + 0.5vw);
+    }
+    
+    .menu-title {
+        font-size: calc(24px + 1.5vw);
+    }
+    
+    .menu-subtitle {
+        font-size: calc(18px + 0.8vw);
+    }
+    
+    .carousel-container {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .carousel-track {
+        gap: calc(10px + 0.5vw);
+        transform: translateX(0);
+    }
+    
+    .menu-item {
+        min-width: calc(33.333% - 7px);
+        flex-shrink: 0;
+    }
+    
+    .item-container {
+        padding: calc(10px + 0.5vw);
+        margin-bottom: calc(10px + 0.5vw);
+    }
+    
+    .menu-image {
+        width: calc(80px + 3vw);
+        height: calc(80px + 3vw);
+        margin: 0 auto calc(10px + 0.5vw) auto;
+    }
+    
+    .item-name {
+        font-size: calc(12px + 0.8vw);
+    }
+    
+    .map-section,
+    .route-section {
+        padding: calc(30px + 1vw) calc(10px + 0.5vw);
+    }
+    
+    .map-title,
+    .route-title {
+        font-size: calc(24px + 1.5vw);
+    }
+    
+    .map-subtitle {
+        font-size: calc(18px + 0.5vw);
+    }
+    
+    .qr-container {
+        gap: calc(15px + 1vw);
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .qr-code {
+        width: calc(120px + 3vw);
+        height: calc(120px + 3vw);
+    }
+    
+    .qr-label {
+        font-size: calc(16px + 0.5vw);
+    }
+    
+    .contact-block {
+        padding: calc(20px + 1vw) calc(10px + 0.5vw);
+    }
+    
+    .contact-title {
+        font-size: calc(24px + 1.5vw);
+    }
+    
+    .contact-phone {
+        font-size: calc(18px + 0.8vw);
+    }
+    
+    .contact-call-info {
+        font-size: calc(14px + 0.3vw);
+    }
+    
+    .contact-address {
+        font-size: calc(16px + 0.5vw);
+    }
+}
